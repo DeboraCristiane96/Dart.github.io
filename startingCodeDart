@@ -1,0 +1,113 @@
+void main() {
+  print('${varName}-${varAge}');
+  print('${listaNomes[0]}  ${listaNomes[1]}');
+  print (sobreNome);
+  //if 
+  bool seguir = true;
+if (seguir){
+  print("Andar!");
+}else {
+  print("Parar!");
+}
+  //switch
+  int cont = 5;
+  switch(cont){
+    case 0:
+      print("zero!");
+      break;
+    case 1:
+      print("Um!");
+      break;
+    case 2:
+      print("Dois!");
+      break;
+    case 3:
+      print("Três!");
+      break;
+    default:
+      print("Outro valor!");
+  }
+ for
+  for(int i=1;i<=5;i++){
+    print(i);
+  }
+
+  //while
+  int cont1 = 1;
+  while(cont1 != 11){
+    print(cont1* 2 );
+    cont1= cont1 + 1 ;
+  }
+
+  Celular celularLG = Celular("LG","Rosa",5);
+  celularLG.setValue(1300);
+  print('Valor Antigo! ');
+  print(celularLG.valorDoCelular);
+  print(celularLG.toString());
+  print('Novo Valor! ');
+  print(celularLG.calcularValue(celularLG.valorDoCelular));
+  
+ 
+  Celular celularMotoG = Celular("MotoG","Prata",8);
+  celularMotoG.setValue(1500);
+  print(celularMotoG.valorDoCelular);
+  print(celularMotoG.toString());
+  print(celularMotoG.calcularValue(celularMotoG.valorDoCelular));
+ 
+ 
+  //Enums Pagamento
+  var  pagamento = Pagamento();
+  pagamento.pagar(TipoPagamento.CARTAO);
+  
+  
+}
+//Variáveis
+String varName = "Débora";
+int varAge = 26;
+bool varTrue = true;
+List<String> listaNomes = ["Débora", "Cristiane"];
+//Null Safety
+String? name ;
+late String sobreNome = "Apolinário";
+//métodos e Classes
+class Celular{
+  final String modelo;
+  final String cor;
+  final int process;
+  double _valor = 1000;
+  Celular(this.modelo,this.cor,this.process);
+  
+  double get valorDoCelular => _valor;
+  
+  void setValue (double valor)=> _valor = valor;
+  
+  double calcularValue(double value){
+    return (value * this.process);
+  }
+    
+  String toString(){
+    return ('Modelo: $modelo - Cor: $cor - Processo: $process, valor $_valor');
+  }
+  
+}
+enum TipoPagamento{
+    PIX('Pix'),
+    BOLETO('Boleto'),
+    CARTAO('Cartao');
+    final String value;
+    const TipoPagamento(this.value);
+    
+  }
+class Pagamento{
+  
+ void pagar(TipoPagamento tipoPagamento){
+   if(tipoPagamento.value == "Pix"){
+     print("Pagamento com Pix....");
+   }else if(tipoPagamento.value == "Boleto"){
+     print("Pagamento com Boleto...");
+   }else if(tipoPagamento.value == "Cartao"){
+     print("Pagamento Com Cartão...");
+   }
+   
+ }
+}
