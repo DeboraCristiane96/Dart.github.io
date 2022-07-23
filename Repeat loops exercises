@@ -1,0 +1,16 @@
+void main() {
+Calculadora calculadora = Calculadora();
+calculadora.setValue(2);
+calculadora.tabuadaValue();
+}
+class Calculadora{
+int _value = 0;
+void setValue(int value)=> _value = value;
+void tabuadaValue(){
+int cont = 1;
+while(cont != 11){
+print('this.valueX{cont} = ${this._value*cont}');
+cont = cont + 1;
+}
+}
+}
