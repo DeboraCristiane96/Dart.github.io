@@ -1,0 +1,64 @@
+void main() {
+  Exercicio1 ex1 = Exercicio1();
+  ex1.maiorValorDeDois(8,2);
+  Exercicio2 ex2 = Exercicio2();
+  ex2.maiorValorDeTresNum(3,7,3);
+  Exercicio3 ex3 = Exercicio3();
+  ex3.calculaReajustes(2000);
+  
+}
+class Exercicio1{
+  void maiorValorDeDois(int valor1, int valor2){
+    if ((valor1 >= valor2)){
+      print('Maior Valor = $valor1');
+    }else{
+      print('Maior valor = $valor2');
+    }
+  }
+}
+class Exercicio2{
+  void maiorValorDeTresNum(int valor1,int valor2,int valor3){
+    if(valor1 > valor2 && valor1 > valor3){
+      print('Maior Valor = $valor1');
+    }else if(valor2 > valor1 && valor2>valor3){
+      print('Maior Valor = $valor2');
+    }else if(valor3 > valor1 && valor3>valor2){
+      print('Maior Valor = $valor3');
+    }else{
+      print("Todos os valores são iguais");
+    }
+}
+}
+class Exercicio3{
+ 
+  void calculaReajustes(double salario){
+      double novoSal  = 0;
+      double percentual = 0;
+      double aumento = 0;
+    if(salario <= 280.00){
+      percentual =  20;
+      aumento = (salario * (percentual/100));
+      novoSal = (salario + aumento);
+ 
+    }else if(salario > 280.00 && salario <= 700.00){
+      percentual =  15;
+      aumento = (salario * (percentual/100));
+      novoSal = (salario + aumento);
+
+    }else if(salario >= 700.00 && salario < 1500.00){
+      percentual =  10;
+      aumento = (salario * (percentual/100));
+      novoSal = (salario + aumento);
+      
+    }else if(salario >= 1500.00){
+      percentual =  5;
+      aumento = (salario * (percentual/100));
+      novoSal = (salario + aumento);
+    }
+      print('Salário antes do reajuste = $salario,00');
+      print('Porcentual de aumento aplicado $percentual%');
+      print('Valor do aumento $aumento,00');
+      print('Novo salário =  $novoSal,00'); 
+  }
+  
+}
